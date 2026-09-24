@@ -1,95 +1,11 @@
 # ⭐ Star Catch
 
-A fast-paced Flutter game where players catch falling stars, build combos, collect coins, and challenge their best score.
+A 30-second Flutter tap game. Flutter UI and game logic are in Dart; the Android native integration is Java.
 
-## 🎮 About the Game
+## Use
 
-Star Catch is a Flutter-based arcade game designed around quick reflexes and score-based gameplay.
+1. Create the Android/iOS platform folders if they do not exist: `flutter create .`
+2. This preserves `lib/main.dart`; if Flutter replaces the Java activity, restore the provided `android/app/src/main/java/com/example/flutter_java_game/MainActivity.java`.
+3. Run with `flutter run`.
 
-Players can catch stars, build combos, manage lives, collect coins, and progress through different levels while using power-ups and unlocking additional game features.
-
-## ✨ Features
-
-- ⭐ Star-catching gameplay
-- 🏆 Score and best-score tracking
-- 📈 Level progression
-- ❤️ Lives system
-- 🪙 Coin wallet
-- 🔥 Combo system
-- ⚡ Power-ups
-- 🎯 Missions
-- 🏅 Achievements
-- 🎁 Daily rewards
-- 👤 Player profile
-- 📊 Player statistics
-- 🎮 Multiple game modes
-- 🎨 Skins
-- 🌈 Themes
-- 🏆 Leaderboard
-- 🔊 Background music and sound effects
-- ⏸️ Pause and resume gameplay
-- 💾 Local game-data storage
-
-## 🖥️ Gameplay UI
-
-The game includes a dedicated HUD displaying:
-
-- Score
-- Best score
-- Current level
-- Remaining lives
-- Coins
-- Combo
-- Current game mode
-- Pause control
-- Player profile
-- Game menu
-
-## 🛠️ Technologies Used
-
-- **Flutter**
-- **Dart**
-- **Android**
-- **SharedPreferences / Local Storage**
-- **Material UI**
-- **Audio assets**
-
-## 📂 Project Structure
-
-```text
-lib/
-├── audio/
-│   ├── audio_settings.dart
-│   └── game_audio.dart
-│
-├── effects/
-│   └── game_effects.dart
-│
-├── features/
-│   ├── achievements.dart
-│   ├── coin_wallet.dart
-│   ├── daily_rewards.dart
-│   ├── game_modes.dart
-│   ├── leaderboard.dart
-│   ├── missions.dart
-│   ├── player_profile.dart
-│   ├── skins.dart
-│   ├── statistics.dart
-│   └── themes.dart
-│
-├── game/
-│   ├── difficulty.dart
-│   ├── game_controller.dart
-│   ├── game_item.dart
-│   ├── game_menu.dart
-│   └── star_game.dart
-│
-├── utils/
-│   └── game_storage.dart
-│
-└── main.dart
-
-assets/
-├── audio/
-└── images/
-
+The Java bridge adds a short Android vibration whenever a star is caught. Add `<uses-permission android:name="android.permission.VIBRATE" />` directly under the `<manifest>` line in `android/app/src/main/AndroidManifest.xml`.
